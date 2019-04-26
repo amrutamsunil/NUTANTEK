@@ -111,7 +111,7 @@ if(isset($_POST['upload'])){
             $f = fopen($_FILES['resume']['tmp_name'], "r");
             $data = $_FILES['resume']['tmp_name'];
             $data_ = read_docx($data);
-            preg_match_all("/[\.a-zA-Z0-9-]+@[\.a-zA-Z0-9-]+/i", $data_, $email_id);
+            preg_match_all("/[\.a-zA-Z0-9_-]+@[\.a-zA-Z0-9-]+/i", $data_, $email_id);
             preg_match('/([0-9]{3})?[\.)(]*([0-9]{10})/', $data_, $ph_no);
             $email_id = array_flatten($email_id);
             $ph_no = array_flatten($ph_no);
